@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <script>
+        function validateform(){  
+            
+            
+            var check_name=document.Sign_up.name.value;
+            var check_pswrd=document.Sign_up.password.value;
+            var check_confirm=document.Sign_up.confirm_password.value;
+            var check_email=document.Sign_up.email.value;
+            var check_contact=document.Sign_up.contact.value;
+            
+            if (check_name==null || check_name==""){  
+  alert("Name can't be blank");  
+  return false;  
+}
+            else if(check_pswrd.length<6){  
+  alert("Password must be at least 6 characters long.");  
+  return false;  
+  }  
+            
+            if(check_pswrd==check_confirm){  
+return true;  
+}  
+            
+else{  
+alert("password must be same!");  
+return false;  
+}  
+            if (isNaN(check_contact)){  
+  document.getElementById("numloc").innerHTML="Enter Numeric value only";  
+  return false;  
+}else{  
+  return true;  
+  }  
+       
+          
+var atposition=check_email.indexOf("@");  
+var dotposition=check_email.lastIndexOf(".");  
+if (atposition<1 || dotposition<atposition+2 || dotposition+2>=x.length){  
+  alert("Please enter a valid e-mail address");  
+  return false;  
+  }  
+        }
+            
+            
+        
+        </script>
+        <body>
+            
+            <form name="Sign_up" id="sign_up_form_id" onsubmit="return validateform();"  >
+            <table style="margin-left: auto; margin-right: auto; margin-top: 200px;">  
+                <tr><td>Name</td> 
+                    <td><input type="text" name="name" style="margin-left: auto; margin-right: auto; margin-top: auto;" ></td></tr> 
+                
+                <tr><td>Password</td>
+                    <td><input type="password" name="password" ></td></tr>
+                
+                <tr><td> Confirm Password<td>
+                    <input type="password" name="confirm_password"></td></tr>
+                
+                <tr><td> Email</td>
+                    <td><input type="email" name="email" ></td></tr>
+                
+                <tr><td>Contact</td>
+                    <td><input type="number" name="contact"></td></tr>
+                
+                <tr><td><input type="submit" value="Register" style="width: 100px; height: 50px; margin-top: 20px;"></td></tr>
+                
+            </table>
+            </form>
+        </body>
+    </head>
+</html>
